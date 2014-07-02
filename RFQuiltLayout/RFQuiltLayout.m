@@ -68,10 +68,10 @@
 	}
     
     if (isVert) {
-        return CGSizeMake(self.collectionView.frame.size.width, ((self.furthestBlockPoint.y+1) * self.itemBlockSize.height) + totalSectionInsets);
+        return CGSizeMake(self.collectionView.frame.size.width - 10.f, ((self.furthestBlockPoint.y+1) * self.itemBlockSize.height) + totalSectionInsets);
 	}
     else {
-        return CGSizeMake(((self.furthestBlockPoint.x+1) * self.itemBlockSize.width) + totalSectionInsets, self.collectionView.frame.size.height);
+        return CGSizeMake(((self.furthestBlockPoint.x+1) * self.itemBlockSize.width) + totalSectionInsets, self.collectionView.frame.size.height - 10.f);
 	}
 }
 

@@ -23,10 +23,10 @@
 	self.sections = [NSMutableArray array];
 	
 	int num = 0;
-	for(int i=0; i < 8; i++)
+	for(int i=0; i < 1; i++)
 	{
 		NSMutableArray *section = [NSMutableArray array];
-		for(int j=0; j < 28; j++)
+		for(int j=0; j < 1000; j++)
 		{
 			[section addObject:@(num)];
 			num ++;
@@ -40,11 +40,11 @@
     
     RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.itemBlockSize = CGSizeMake(100, 100);
-	layout.sectionInset = UIEdgeInsetsMake(10, 150, 50, 150);
-	layout.itemInset = UIEdgeInsetsMake(4, 4, 4, 4);
-	layout.headerReferenceSize = CGSizeMake(720, 70);
-	layout.footerReferenceSize = CGSizeMake(720, 70);
+    layout.itemBlockSize = CGSizeMake(106, 106);
+	layout.sectionInset = UIEdgeInsetsZero;
+	layout.itemInset = UIEdgeInsetsZero;
+	layout.headerReferenceSize = CGSizeMake(320, 120);
+	layout.footerReferenceSize = CGSizeMake(320, 70);
     
     [self.collectionView reloadData];
 }
@@ -90,7 +90,7 @@
 }
 
 - (CGSize)blockSizeForNumber:(NSNumber*)num {
-	return ([num intValue] % 2 ? CGSizeMake(1, 1) : CGSizeMake(2, 1));
+	return ([num intValue] % 7 ? CGSizeMake(1, 1) : CGSizeMake(2,2));
 }
 
 #pragma mark - UICollectionView Datasource
