@@ -108,6 +108,11 @@
         }
         return YES;
     }];
+    
+    
+    if ( attributes.count == 0 && self.headerReferenceSize.height > 0) {
+        [attributes addObject:[self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0  ]]];
+    }
 	
     return (self.previousLayoutAttributes = [attributes allObjects]);
 }
